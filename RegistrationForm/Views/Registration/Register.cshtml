@@ -1,0 +1,22 @@
+﻿@model RegistrationForm.Models.User
+
+@{
+    ViewBag.Title = "Register";
+}
+<h2>Register</h2>
+
+@using (Html.BeginForm())
+{
+    <div>
+        First Name: @Html.TextBoxFor(m => m.First_Name) <br /><br />
+        Last Name: @Html.TextBoxFor(m => m.Last_Name) <br /><br />
+        Date of Birth: @Html.TextBoxFor(m => m.DOB, new { type = "date" }) <br /><br />
+        Place: @Html.TextBoxFor(m => m.Place) <br /><br />
+        <input type="submit" value="Submit" />
+    </div>
+}
+
+@if (ViewBag.Message != null)
+{
+    <p style="color:green">@ViewBag.Message</p>
+}
